@@ -40,7 +40,11 @@ const CocktailGrid = () => {
       filtered = filtered.filter((cocktail) => cocktail.types.includes(type));
     }
 
-    setFilteredCocktails(filtered);
+    setFilteredCocktails(
+      [...filtered].sort((a, b) =>
+        a.cocktailName.localeCompare(b.cocktailName)
+      )
+    );    
   }, [liquorType, strength, type, cocktails]);
 
   return (
