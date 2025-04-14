@@ -3,7 +3,6 @@
 A mobile-friendly cocktail menu built with React, Tailwind CSS, and AWS — designed so guests at my home can simply scan a QR code and browse all the drinks I can make for them.
 
 ![Hero Screenshot](./screenshots/hero-section.png)
-*Hero section welcoming users with flair and flavor*
 
 ---
 
@@ -42,12 +41,10 @@ I created this app as a personal, scannable **cocktail menu for friends visiting
 
 ## 📸 Screenshots
 
-> Add screenshots to the `./screenshots` folder and replace the paths below once uploaded.
-
 | Feature | Preview |
 |--------|---------|
 | Cocktail Grid | ![Grid Screenshot](./screenshots/grid-section.png) |
-| Cocktail Detail Page | ![Detail Screenshot](./screenshots/detail-page.png) |
+| Cocktail Detail Page | ![Detail Screenshot](./screenshots/details-page.png) |
 | QR Code Page | ![QR Code Screenshot](./screenshots/qr-cocktail.png) |
 
 ---
