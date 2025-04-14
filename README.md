@@ -28,14 +28,14 @@ I created this app as a personal, scannable **cocktail menu for friends visiting
 
 ## 🚀 Features
 
-- 📱 **Mobile-First Design** – Easily browsable on any phone or tablet
-- 🍹 **Cocktail Filtering** – Filter by liquor type, strength, or style
-- 🧠 **Cocktail Details** – View ingredients, images, and descriptions
-- 🧾 **Dynamic Data** – Cocktail list powered by AWS DynamoDB
-- 📸 **Image Gallery** – Visual drink menu with high-quality photos
-- 🔐 **Secure Access** – AWS Cognito identity management
-- 📦 **Automated Uploads** – PowerShell script + AWS CLI for bulk loading drinks
-- 🔗 **Deployed on Vercel** – [Live Site](https://albany-cocktail-menu.vercel.app)
+- **Mobile-First Design** – Easily browsable on any phone or tablet
+- **Cocktail Filtering** – Filter by liquor type, strength, or style
+- **Cocktail Details** – View ingredients, images, and descriptions
+- **Dynamic Data** – Cocktail list powered by AWS DynamoDB
+- **Image Gallery** – Visual drink menu with high-quality photos
+- **Secure Access** – AWS Cognito identity management
+- **Automated Uploads** – PowerShell script + AWS CLI for bulk loading drinks
+- **Deployed on Vercel** – [Live Site](https://albany-cocktail-menu.vercel.app)
 
 ---
 
@@ -51,8 +51,8 @@ I created this app as a personal, scannable **cocktail menu for friends visiting
 
 ## 🧑‍🍳 How It Works
 
-1. **Scan the QR Code** placed on my bar.
-2. **Browse drink options** (cocktails only — wine’s by verbal request 😄).
+1. **Scan the QR Code** placed on my coasters or fridge.
+2. **Browse drink options** (cocktails only — wine’s by verbal request).
 3. **Filter by your vibe** – want something strong, sweet, or tropical?
 4. **Order from the bartender** (me) based on what's listed. Cheers!
 
