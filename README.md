@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# 🍸 Albany Cocktail Menu
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A mobile-friendly cocktail menu built with React, Tailwind CSS, and AWS — designed so guests at my home can simply scan a QR code and browse all the drinks I can make for them.
 
-## Available Scripts
+![Hero Screenshot](./screenshots/hero-section.png)
+*Hero section welcoming users with flair and flavor*
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🎯 Purpose
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I created this app as a personal, scannable **cocktail menu for friends visiting my home**. Instead of flipping through notes or reciting from memory, guests can scan a **QR code** at the bar and instantly view drink options—complete with photos, ingredients, and fun names.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ⚙️ Technologies & Tools Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Layer         | Stack / Tools |
+|--------------|---------------|
+| **Front-End** | React, Tailwind CSS, React Router |
+| **Database**  | AWS DynamoDB |
+| **Auth & Security** | AWS Cognito (unauthenticated identity access) |
+| **Cloud Tools** | AWS SDK (DynamoDB access), AWS CLI |
+| **QR Code** | [qrcode.react](https://www.npmjs.com/package/qrcode.react) |
+| **Deployment** | Vercel |
+| **Dev Tools** | PowerShell scripting, JSON data modeling |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 📱 **Mobile-First Design** – Easily browsable on any phone or tablet
+- 🍹 **Cocktail Filtering** – Filter by liquor type, strength, or style
+- 🧠 **Cocktail Details** – View ingredients, images, and descriptions
+- 🧾 **Dynamic Data** – Cocktail list powered by AWS DynamoDB
+- 📸 **Image Gallery** – Visual drink menu with high-quality photos
+- 🔐 **Secure Access** – AWS Cognito identity management
+- 📦 **Automated Uploads** – PowerShell script + AWS CLI for bulk loading drinks
+- 🔗 **Deployed on Vercel** – [Live Site](https://albany-cocktail-menu.vercel.app)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📸 Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> Add screenshots to the `./screenshots` folder and replace the paths below once uploaded.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Feature | Preview |
+|--------|---------|
+| Cocktail Grid | ![Grid Screenshot](./screenshots/grid-section.png) |
+| Cocktail Detail Page | ![Detail Screenshot](./screenshots/detail-page.png) |
+| QR Code Page | ![QR Code Screenshot](./screenshots/qr-cocktail.png) |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🧑‍🍳 How It Works
 
-## Learn More
+1. **Scan the QR Code** placed on my bar.
+2. **Browse drink options** (cocktails only — wine’s by verbal request 😄).
+3. **Filter by your vibe** – want something strong, sweet, or tropical?
+4. **Order from the bartender** (me) based on what's listed. Cheers!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 💻 Getting Started Locally
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/your-username/albany-cocktail-menu.git
+cd albany-cocktail-menu
+npm install
+npm start
