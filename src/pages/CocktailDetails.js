@@ -2,6 +2,22 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import dynamoDB from "../api/config";
 
+import {
+  Box,
+  Container,
+  Typography,
+  Card,
+  CardMedia,
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
+import LabelIcon from "@mui/icons-material/Label";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
+
 const CocktailDetails = () => {
   const { cocktailName } = useParams();
   const [cocktail, setCocktail] = useState(null);
@@ -30,46 +46,100 @@ const CocktailDetails = () => {
   }, [cocktailName]);
 
   if (!cocktail) {
-    return <div className="text-white text-center mt-20">Loading...</div>;
+    return (
+      <Box sx={{ bgcolor: "black", color: "white", textAlign: "center", py: 10 }}>
+        <Typography variant="h6">Loading...</Typography>
+      </Box>
+    );
   }
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col items-center px-6 py-10">
-      <div className="max-w-4xl w-full flex flex-col md:flex-row items-center gap-8">
-        {/* Cocktail Image */}
-        <img 
-          src={cocktail.imageURL} 
-          alt={cocktail.cocktailName} 
-          className="w-full md:w-1/2 rounded-lg shadow-lg"
-        />
+    <Box sx={{ bgcolor: "black", color: "white", minHeight: "100vh", py: 8 }}>
+      <Container maxWidth="lg">
+        <Box
+          sx={{
+            display: { xs: "block", md: "flex" },
+            gap: 6,
+            alignItems: "flex-start",
+          }}
+        >
+          <Card
+            sx={{
+              borderRadius: 3,
+              width: { xs: "100%", md: "45%" },
+              mb: { xs: 4, md: 0 },
+            }}
+          >
+            <CardMedia
+              component="img"
+              image={cocktail.imageURL}
+              alt={cocktail.cocktailName}
+              sx={{ height: 450, objectFit: "cover" }}
+            />
+          </Card>
 
-        {/* Cocktail Details */}
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-4">
-            {cocktail.cocktailName}
-          </h1>
-          <p className="text-lg mb-6">{cocktail.description}</p>
+          <Box sx={{ flex: 1 }}>
+            <Typography variant="h4" color="primary" fontWeight="bold" gutterBottom>
+              {cocktail.cocktailName}
+            </Typography>
 
-          {/* Liquor Type */}
-          <div className="mb-4">
-            <h3 className="text-lg md:text-xl font-bold text-yellow-400">Liquor Type</h3>
-            <p className="text-base md:text-lg">{cocktail.spiritUsed}</p>
-          </div>
+            <Typography variant="body1" paragraph>
+              {cocktail.description}
+            </Typography>
 
-          {/* Strength */}
-          <div className="mb-4">
-            <h3 className="text-lg md:text-xl font-bold text-yellow-400">Strength</h3>
-            <p className="text-base md:text-lg">{cocktail.strength}</p>
-          </div>
+            <Divider sx={{ my: 2 }} />
 
-          {/* Types */}
-          <div className="mb-4">
-            <h3 className="text-lg md:text-xl font-bold text-yellow-400">Types</h3>
-            <p className="text-base md:text-lg">{cocktail.types.join(", ")}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+            <Box sx={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+              <Box>
+                <Typography variant="h6" color="primary">
+                  Liquor Type
+                </Typography>
+                <Typography variant="body1">{cocktail.spiritUsed}</Typography>
+              </Box>
+              <Box>
+                <Typography variant="h6" color="primary">
+                  Strength
+                </Typography>
+                <Typography variant="body1">{cocktail.strength}</Typography>
+              </Box>
+              <Box>
+                <Typography variant="h6" color="primary">
+                  Types
+                </Typography>
+                <Typography variant="body1">{cocktail.types.join(", ")}</Typography>
+              </Box>
+            </Box>
+
+            <Box mt={4}>
+              <Typography variant="h6" color="primary" gutterBottom>
+                <LabelIcon fontSize="small" sx={{ mr: 1 }} />
+                Ingredients
+              </Typography>
+              <List dense>
+                {cocktail.ingredients?.map((ingredient, index) => (
+                  <ListItem key={index} sx={{ pl: 0 }}>
+                    <ListItemIcon sx={{ minWidth: "30px" }}>
+                      <EmojiFoodBeverageIcon color="primary" fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText primary={ingredient} />
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+
+            <Box mt={4}>
+              <Typography variant="h6" color="primary" gutterBottom>
+                <MenuBookIcon fontSize="small" sx={{ mr: 1 }} />
+                Instructions
+              </Typography>
+              <Typography variant="body1" whiteSpace="pre-line">
+                {cocktail.instructions}
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

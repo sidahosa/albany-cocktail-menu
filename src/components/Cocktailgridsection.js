@@ -52,7 +52,6 @@ const CocktailGrid = () => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold text-yellow-400 mb-6 text-center">Explore All Cocktails</h2>
 
-        {/* Mobile-Friendly Filters */}
         <div className="flex flex-col md:flex-row gap-4 mb-6 items-center">
           <select
             className="w-full md:w-auto bg-gray-800 text-white px-4 py-2 rounded border border-yellow-400"
@@ -99,7 +98,6 @@ const CocktailGrid = () => {
           </button>
         </div>
 
-        {/* Responsive Cocktail Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredCocktails.length > 0 ? (
             filteredCocktails.map((cocktail, index) => (
