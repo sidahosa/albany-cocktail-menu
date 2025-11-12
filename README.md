@@ -1,4 +1,4 @@
-# 🍸 Albany Cocktail Menu
+# Albany Cocktail Menu
 
 A mobile-friendly cocktail menu built with React, Tailwind CSS, and AWS designed so guests at my home can scan a QR code and browse all the drinks I can make for them.
 
@@ -6,13 +6,13 @@ A mobile-friendly cocktail menu built with React, Tailwind CSS, and AWS designed
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 I created this app as a personal, scannable **cocktail menu for friends visiting my home**. Instead of flipping through notes or reciting from memory, guests can scan a **QR code** at the bar and instantly view drink options complete with photos, ingredients, and fun names.
 
 ---
 
-## ⚙️ Technologies & Tools Used
+## Technologies & Tools Used
 
 | Layer         | Stack / Tools |
 |--------------|---------------|
@@ -26,7 +26,7 @@ I created this app as a personal, scannable **cocktail menu for friends visiting
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Mobile-First Design** – Easily browsable on any phone or tablet
 - **Cocktail Filtering** – Filter by liquor type, strength, or style
@@ -39,7 +39,7 @@ I created this app as a personal, scannable **cocktail menu for friends visiting
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 | Feature | Preview |
 |--------|---------|
@@ -49,7 +49,7 @@ I created this app as a personal, scannable **cocktail menu for friends visiting
 
 ---
 
-## 🧑‍🍳 How It Works
+## How It Works
 
 1. **Scan the QR Code** placed on my coasters or fridge.
 2. **Browse drink options** (cocktails only wines by verbal request).
@@ -58,7 +58,7 @@ I created this app as a personal, scannable **cocktail menu for friends visiting
 
 ---
 
-## 💻 Getting Started Locally
+## Getting Started Locally
 
 ```bash
 git clone https://github.com/your-username/albany-cocktail-menu.git
