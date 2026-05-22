@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import HeroSection from "../components/HeroBanner";
 import FeaturedCocktail from "../components/FeaturedCocktail";
 import CocktailGrid from "../components/Cocktailgridsection";
 import dynamoDB from "../api/config";

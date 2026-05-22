@@ -83,6 +83,7 @@ const CocktailGrid = ({ cocktails: cocktailsProp, loading: loadingProp }) => {
     })();
   }, [selfManaged]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const cocktails = selfManaged ? fetched : cocktailsProp || [];
   const loading = selfManaged ? selfLoading : !!loadingProp;
 
