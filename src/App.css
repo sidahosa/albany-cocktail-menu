@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+/* ============================================================
+   Albany Cocktails — Luxe Speakeasy global styles
+   Type: Cormorant Garamond (display) + Jost (body / UI)
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap');
+
+:root {
+  --ink:        #0b0a08;
+  --ink-800:    #110f0b;
+  --surface:    #16130d;
+  --surface-2:  #1e1810;
+  --line:       rgba(212, 175, 55, 0.22);
+  --line-soft:  rgba(212, 175, 55, 0.12);
+  --line-strong:rgba(212, 175, 55, 0.55);
+  --gold:       #d4af37;
+  --gold-bright:#f4d87a;
+  --gold-deep:  #a87c2e;
+  --champagne:  #ecdcae;
+  --ivory:      #f3ecdd;
+  --ash:        #b3a892;
+  --glow:       0 24px 60px -22px rgba(212, 175, 55, 0.45);
 }
 
-.App-logo {
-  height: 40vmin;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background-color: var(--ink);
+  color: var(--ivory);
+  font-family: 'Jost', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* warm radial atmosphere */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
   pointer-events: none;
+  background:
+    radial-gradient(1100px 620px at 50% -12%, rgba(212, 175, 55, 0.12), transparent 60%),
+    radial-gradient(820px 520px at 100% 105%, rgba(168, 124, 46, 0.07), transparent 60%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* fine film grain for depth */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root { position: relative; z-index: 1; }
+
+/* ---------- Reusable luxe utilities ---------- */
+.font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+/* gilded gradient text */
+.gold-text {
+  background: linear-gradient(105deg, var(--gold-deep), var(--gold-bright) 45%, var(--gold) 70%, var(--champagne));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* tracked-out deco eyebrow label */
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--gold);
+}
+
+/* centered deco rule with a diamond */
+.deco-rule {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.85rem;
+}
+.deco-rule::before,
+.deco-rule::after {
+  content: "";
+  height: 1px;
+  width: clamp(40px, 14vw, 120px);
+  background: linear-gradient(90deg, transparent, var(--line-strong));
+}
+.deco-rule::after { transform: scaleX(-1); }
+.deco-rule .diamond {
+  width: 7px; height: 7px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
 }
 
-.App-link {
-  color: #61dafb;
+/* gilded scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--gold-deep), var(--gold));
+  border-radius: 8px;
+  border: 2px solid var(--ink);
+}
+::selection { background: rgba(212, 175, 55, 0.3); color: var(--ivory); }
+
+/* native select chevron + dark popup */
+.lux-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M3 5l4 4 4-4' stroke='%23d4af37' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.95rem center;
+}
+.lux-select option { background: #16130d; color: #f3ecdd; }
+
+/* ---------- Animations ---------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -480px 0; }
+  100% { background-position: 480px 0; }
+}
+.rise { opacity: 0; animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+.skeleton {
+  background: linear-gradient(90deg, #16130d 25%, #221c12 50%, #16130d 75%);
+  background-size: 960px 100%;
+  animation: shimmer 1.6s infinite linear;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (prefers-reduced-motion: reduce) {
+  .rise { animation: none; opacity: 1; }
+  .skeleton { animation: none; }
+  html { scroll-behavior: auto; }
 }

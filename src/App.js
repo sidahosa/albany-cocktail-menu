@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./theme";
+import "./App.css";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import CocktailDetails from "./pages/CocktailDetails";
